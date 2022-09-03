@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neta_event/Inscription/BeforeInscription.dart';
 import 'dart:async';
 
 import 'package:neta_event/Slash%20Screen/Group_SC.dart';
@@ -12,13 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Neta-Event',
-     /* theme: ThemeData(
-          colorScheme: ColorScheme.fromSwatch().copyWith(
-            primary: Color.fromRGBO(19, 33, 55, 1),
-          ),*/
-       //   scaffoldBackgroundColor: Color.fromRGBO(247, 235, 225, 1)),
-
-
+        initialRoute: '/',
+        routes: {
+          // When navigating to the "/second" route, build the SecondScreen widget.
+          '/BeforeInscription': (context) => const BeforeIncription(),
+        },
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
     );

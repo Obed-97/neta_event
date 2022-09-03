@@ -56,7 +56,7 @@ class _SC_EventState extends State<SC_Event>
                   Center(
                     child: InkWell(
                       onTap: () {
-                        widget.animationController.animateTo(0.8);
+                        Navigator.pushNamed(context, '/BeforeInscription');
                       },
                       child: Container(
                         height: 60,
