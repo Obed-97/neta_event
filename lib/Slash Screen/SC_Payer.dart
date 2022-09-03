@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neta_event/Slash%20Screen/SC_Event.dart';
 
 class SC_Payer extends StatefulWidget {
   final AnimationController animationController;
@@ -22,6 +23,8 @@ class _SC_PayerState extends State<SC_Payer> {
         curve: Curves.fastOutSlowIn,
       ),
     ));
+
+
 
     return SlideTransition(
       position: _introductionanimation,
@@ -89,6 +92,11 @@ class _SC_PayerState extends State<SC_Payer> {
                     InkWell(
                       onTap: () {
                         widget.animationController.animateTo(0.8);
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => SC_Event(animationController: widget.animationController,),
+                          ),
+                        );
                       },
                       child: Container(
                         height: 60,
@@ -128,3 +136,5 @@ class _SC_PayerState extends State<SC_Payer> {
     );
   }
 }
+
+

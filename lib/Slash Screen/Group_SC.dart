@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neta_event/Slash%20Screen/SC_Event.dart';
 import 'package:neta_event/Slash%20Screen/SC_Payer.dart';
 
 import 'SC_Ticket.dart';
@@ -35,8 +36,9 @@ class _Group_SC_State extends State<Group_SC> with TickerProviderStateMixin {
       body: SingleChildScrollView(
         child: Stack(
           children: [
-         SC_Ticket(animationController: _animationController!),
-         SC_Payer(animationController: _animationController!),
+            SC_Ticket(animationController: _animationController!),
+            SC_Payer(animationController: _animationController!)
+          //  SC_Event(animationController: _animationController!),
           ],
         ),
       ),

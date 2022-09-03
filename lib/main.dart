@@ -51,10 +51,10 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             child: Column(
               children: [
                 Image.asset(
-                  'assets/SlashScreen/frame1.png',
-                  width: MediaQuery.of(context).size.width * 0.9,
-                  height: MediaQuery.of(context).size.height * 0.9,
-                  scale: 0.5,
+                  'assets/SlashScreen/frame1.PNG',
+                  width: MediaQuery.of(context).size.width * 1.2,
+                  height: MediaQuery.of(context).size.height * 1 ,
+                  scale: 0.1,
                 ),
               ],
             )));
