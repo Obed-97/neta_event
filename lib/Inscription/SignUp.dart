@@ -353,6 +353,33 @@ class SignUpState extends State<SignUp>
           ),
         ),
       ),),
+      SizedBox(height: 10,),
+           SizedBox(child:
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center ,//Center Row contents horizontally,
+            crossAxisAlignment: CrossAxisAlignment.center ,//Center Row contents vertically,
+            children: [
+            Text(
+              " Vous avez déja un compte",
+              style: TextStyle(
+                fontSize: 13,
+                color: Colors.black,
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                print('dvds');
+              },
+              child: Text(
+                " Signin",
+                style: TextStyle(
+                  fontSize: 13,
+                  color: Colors.pink,
+                ),
+              ),
+            ),
+          ],) ,
+          ),
       SizedBox(height: 50,),
 
     ],),),
