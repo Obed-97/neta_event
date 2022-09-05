@@ -133,6 +133,7 @@ class _BeforeIncription_State extends State<BeforeIncription>
 
           InkWell(
             onTap: () {
+              Navigator.pushNamed(context, '/SignUp');
             },
             child: Container(
               height: 50,

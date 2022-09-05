@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:neta_event/Inscription/BeforeInscription.dart';
+import 'package:neta_event/Inscription/SignUp.dart';
 import 'dart:async';
 
 import 'package:neta_event/Slash%20Screen/Group_SC.dart';
@@ -15,8 +16,8 @@ class MyApp extends StatelessWidget {
       title: 'Neta-Event',
         initialRoute: '/',
         routes: {
-          // When navigating to the "/second" route, build the SecondScreen widget.
           '/BeforeInscription': (context) => const BeforeIncription(),
+          '/SignUp': (context) => SignUp(),
         },
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
