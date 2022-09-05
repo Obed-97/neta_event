@@ -1,53 +1,46 @@
 import 'package:flutter/material.dart';
-
 import '../Model/User.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 
-class SignUp extends StatefulWidget
+class SignIn extends StatefulWidget
 {
-  SignUp({Key? key}) : super(key: key);
+  const SignIn({Key? key}) : super(key: key);
 
   @override
-  State<SignUp> createState() => SignUpState();
+  _SignIn_State createState() => _SignIn_State();
 }
 
-class SignUpState extends State<SignUp>
+class _SignIn_State extends State<SignIn>
 {
-  bool password1 = true ;
-  bool password2 = true ;
-  String ConfirmePassword="";
+  late bool  trSwitch = false ;
   late User user = User(email: '', password: '', name: '');
-
-
+  bool password1 = true ;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
 
-      appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.purple, Colors.pink],
-              begin: FractionalOffset.centerLeft,
-              end: FractionalOffset.centerRight,
-            ),
-          ),
-        ),
-      ),
-      body: SingleChildScrollView(
+     body : SingleChildScrollView(
       physics: BouncingScrollPhysics(),
-    child: Column(children: [
-      SizedBox(height: 10,),
+    child:
+    Column(children: [
+      SizedBox(height: 20,),
+      Image.asset(
+        'assets/SlashScreen/netaLogo.png',
+        width: MediaQuery.of(context).size.width * 0.5,
+        height: MediaQuery.of(context).size.height * 0.2 ,
+      ),
+
       Row(
         children: [
           Container(
             padding: EdgeInsets.only(
               left: 10.0,
-              right: 55.0,
+              right: 40.0,
               top: 10,
               bottom: 16,
             ),
             child: Text(
-              "S'inscrire",
+              "Se connecter",
               style: TextStyle(
                 fontSize: 25,
                 color: Colors.black,
@@ -56,44 +49,6 @@ class SignUpState extends State<SignUp>
           ),
           SizedBox(width: MediaQuery.of(context).size.width *0.5,)
         ],
-      ),
-      SizedBox(height: 25,),
-      Center(
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width *0.9,
-          child: TextField(
-
-            cursorHeight: 20,
-            autofocus: false,
-            controller: TextEditingController(text: user.name),
-            onChanged: (value) {
-              user.name = value;
-            },
-            decoration: InputDecoration(
-              labelText: 'Enter your username',
-              labelStyle: TextStyle(
-                color: Colors.black54,
-              ),
-              hintText: "Enter your Name",
-              prefixIcon: Icon(Icons.person , color: Colors.grey,),
-              // suffixIcon: Icon(Icons.keyboard_arrow_down), end of the Input Field
-              contentPadding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.grey, width: 2),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.grey, width: 1.5),
-              ),
-              focusedBorder: OutlineInputBorder(
-                gapPadding: 0.0,
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.purple, width: 1.5),
-              ),
-            ),
-          ),
-        ),
       ),
 
       SizedBox(height: 25,),
@@ -133,7 +88,7 @@ class SignUpState extends State<SignUp>
           ),
         ),
       ),
-       //suffixIcon: Icon(Icons.keyboard_arrow_down),
+      //suffixIcon: Icon(Icons.keyboard_arrow_down),
       SizedBox(height: 25,),
       Center(
         child: SizedBox(
@@ -146,51 +101,6 @@ class SignUpState extends State<SignUp>
             onChanged: (value) {
               user.password = value;
             },            decoration: InputDecoration(
-              labelText: 'Password',
-              labelStyle: TextStyle(
-                color: Colors.black54,
-              ),
-              hintText: "Enter your Password",
-              prefixIcon: Icon(Icons.lock_outline , color: Colors.grey,),
-              suffixIcon: InkWell(
-                  onTap: ()
-                  {
-                    setState(() { this.password1 = !this.password1 ; });
-                  },
-                  child: password1 ? Icon(Icons.visibility_off_rounded , color: Colors.grey,) : Icon(Icons.visibility_rounded , color: Colors.grey,) //Icon(Icons.visibility_rounded , color: Colors.grey,), //visibility_off_rounded
-              ),
-              // suffixIcon: Icon(Icons.keyboard_arrow_down), end of the Input Field
-              contentPadding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.grey, width: 2),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.grey, width: 1.5),
-              ),
-              focusedBorder: OutlineInputBorder(
-                gapPadding: 0.0,
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.purple, width: 1.5),
-              ),
-            ),
-          ),
-        ),
-      ),
-
-      SizedBox(height: 25,),
-      Center(
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width *0.9,
-          child: TextField(
-            obscureText: password2, // hide letters
-            cursorHeight: 20,
-            autofocus: false,
-            controller: TextEditingController(text: ConfirmePassword),
-            onChanged: (value) {
-              ConfirmePassword = value;
-            },            decoration: InputDecoration(
             labelText: 'Password',
             labelStyle: TextStyle(
               color: Colors.black54,
@@ -200,9 +110,9 @@ class SignUpState extends State<SignUp>
             suffixIcon: InkWell(
                 onTap: ()
                 {
-                  setState(() { this.password2 = !this.password2 ; });
+                  setState(() { this.password1 = !this.password1 ; });
                 },
-                child: password2 ? Icon(Icons.visibility_off_rounded , color: Colors.grey,) : Icon(Icons.visibility_rounded , color: Colors.grey,) //Icon(Icons.visibility_rounded , color: Colors.grey,), //visibility_off_rounded
+                child: password1 ? Icon(Icons.visibility_off_rounded , color: Colors.grey,) : Icon(Icons.visibility_rounded , color: Colors.grey,) //Icon(Icons.visibility_rounded , color: Colors.grey,), //visibility_off_rounded
             ),
             // suffixIcon: Icon(Icons.keyboard_arrow_down), end of the Input Field
             contentPadding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
@@ -223,7 +133,51 @@ class SignUpState extends State<SignUp>
           ),
         ),
       ),
-      SizedBox(height: 30,),
+      SizedBox(height: 10,),
+      Center(
+        child: SizedBox(width: MediaQuery.of(context).size.width *0.9,
+          child: Row(children: [
+            FlutterSwitch(
+              activeColor: Colors.purple,
+              width: 55.0,
+              height: 30.0,
+              valueFontSize: 20.0,
+              toggleSize: 30.0,
+              value: trSwitch,
+              borderRadius: 30.0,
+              padding: 4.0,
+              showOnOff: false,
+              onToggle: (val) {
+                setState(() {
+                  trSwitch = val;
+                });
+              },
+            ),
+
+            Text(" Se rappeler",
+              style: TextStyle(
+                fontSize: 15,
+                color: Colors.black,
+              ),
+            ),
+            SizedBox(width: MediaQuery.of(context).size.width *0.19,),
+            InkWell(
+              onTap: () {
+
+              },
+              child: Text("mot de passe oublié?",
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ],),
+        )
+        ,),
+
+      SizedBox(height: 25,),
+
       InkWell(
         onTap: () {
         },
@@ -245,7 +199,7 @@ class SignUpState extends State<SignUp>
             ),
           ),
           child: Text(
-            "S'INSCRIRE",
+            "SE CONNECTER",
             style: TextStyle(
               fontSize: 23,
               color: Colors.white,
@@ -253,15 +207,8 @@ class SignUpState extends State<SignUp>
           ),
         ),
       ),
-      SizedBox(height: 40,),
-      Center(child:
-        Text("OU",
-          style: TextStyle(
-          fontSize: 18,
-          color: Colors.grey,
-        ),
-        ),),
-      SizedBox(height: 20,),
+
+      SizedBox(height: 35,),
       Center(child:SizedBox(
         width: MediaQuery.of(context).size.width * 0.7,
         child: InkWell(
@@ -354,35 +301,36 @@ class SignUpState extends State<SignUp>
         ),
       ),),
       SizedBox(height: 10,),
-           SizedBox(child:
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center ,//Center Row contents horizontally,
-            crossAxisAlignment: CrossAxisAlignment.center ,//Center Row contents vertically,
-            children: [
-            Text(
-              " Vous avez déja un compte",
+      SizedBox(child:
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center ,//Center Row contents horizontally,
+        crossAxisAlignment: CrossAxisAlignment.center ,//Center Row contents vertically,
+        children: [
+          Text(
+            " Vous n'avez pas un compte",
+            style: TextStyle(
+              fontSize: 13,
+              color: Colors.black,
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, '/BeforeInscription');
+            },
+            child: Text(
+              " S'inscrire",
               style: TextStyle(
                 fontSize: 13,
-                color: Colors.black,
+                color: Colors.pink,
               ),
             ),
-            InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, '/SignIn');
-              },
-              child: Text(
-                " Signin",
-                style: TextStyle(
-                  fontSize: 13,
-                  color: Colors.pink,
-                ),
-              ),
-            ),
-          ],) ,
           ),
-      SizedBox(height: 50,),
+        ],) ,
+      ),
 
-    ],),),
+    ],),
+     ),
+
     );
   }
 }

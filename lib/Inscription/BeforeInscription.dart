@@ -86,6 +86,7 @@ class _BeforeIncription_State extends State<BeforeIncription>
     return Scaffold(
       body: Column(
         children: [
+          SizedBox(height: MediaQuery.of(context).size.height *0.07,),
           Row(
             children: [
               Container(
