@@ -23,7 +23,7 @@ class _SignIn_State extends State<SignIn>
       physics: BouncingScrollPhysics(),
     child:
     Column(children: [
-      SizedBox(height: 100,),
+      SizedBox(height: 60,),
       Image.asset(
         'assets/SlashScreen/netaLogo.png',
         width: MediaQuery.of(context).size.width * 0.4,
