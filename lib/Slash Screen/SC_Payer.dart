@@ -55,7 +55,7 @@ class _SC_PayerState extends State<SC_Payer> {
                   SizedBox(height:MediaQuery.of(context).size.height * 0.15 ,),
 
                   Row(children: [
-                    SizedBox(width: MediaQuery.of(context).size.width * 0.07 ,),
+                    SizedBox(width: MediaQuery.of(context).size.width * 0.08 ,),
                     InkWell(
                       onTap: () {
                         // widget.animationController.animateTo(0.5);
@@ -64,7 +64,7 @@ class _SC_PayerState extends State<SC_Payer> {
                         height: 60,
                         padding: EdgeInsets.only(
                           left: 15.0,
-                          right: 20.0,
+                          right: 15.0,
                           top: 10.0,
                           bottom: 16,
                         ),
@@ -82,7 +82,7 @@ class _SC_PayerState extends State<SC_Payer> {
                         child: Text(
                           "Passer",
                           style: TextStyle(
-                            fontSize: 28,
+                            fontSize: 25,
                             color: Colors.black,
                           ),
                         ),

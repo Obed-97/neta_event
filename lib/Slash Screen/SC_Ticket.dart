@@ -39,7 +39,7 @@ class _SC_TicketState extends State<SC_Ticket> {
                   ),
                   //   SizedBox(height:MediaQuery.of(context).size.height * 0.2 ,) ,
                   Row(children: [
-                    SizedBox(width: MediaQuery.of(context).size.width * 0.08 ,) ,
+                    SizedBox(width: MediaQuery.of(context).size.width * 0.11 ,) ,
                     Expanded(
                       child: Text(
                         "L'achat de vos ticket est devenu facile avec nous",
@@ -48,9 +48,9 @@ class _SC_TicketState extends State<SC_Ticket> {
                         maxLines: 3,
                       ),
                     ),
-                    SizedBox(width:MediaQuery.of(context).size.width * 0.08 ,) ,
+                    SizedBox(width:MediaQuery.of(context).size.width * 0.10 ,) ,
                   ],) ,
-                  SizedBox(height:MediaQuery.of(context).size.height * 0.15 ,),
+                  SizedBox(height:MediaQuery.of(context).size.height * 0.10 ,),
 
                   Row(children: [
                     SizedBox(width: MediaQuery.of(context).size.width * 0.07 ,),
@@ -62,7 +62,7 @@ class _SC_TicketState extends State<SC_Ticket> {
                         height: 60,
                         padding: EdgeInsets.only(
                           left: 15.0,
-                          right: 20.0,
+                          right: 25.0,
                           top: 10.0,
                           bottom: 16,
                         ),
@@ -80,7 +80,7 @@ class _SC_TicketState extends State<SC_Ticket> {
                         child: Text(
                           "Passer",
                           style: TextStyle(
-                            fontSize: 28,
+                            fontSize: 25,
                             color: Colors.black,
                           ),
                         ),
