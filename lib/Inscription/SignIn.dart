@@ -180,6 +180,7 @@ class _SignIn_State extends State<SignIn>
 
       InkWell(
         onTap: () {
+          Navigator.pushNamed(context, '/HomePage');
         },
         child: Container(
           height: 60,
