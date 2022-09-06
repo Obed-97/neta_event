@@ -34,12 +34,12 @@ class SignUpState extends State<SignUp>
       body: SingleChildScrollView(
       physics: BouncingScrollPhysics(),
     child: Column(children: [
-      SizedBox(height: 10,),
+      SizedBox(height: 6,),
       Row(
         children: [
           Container(
             padding: EdgeInsets.only(
-              left: 10.0,
+              left: 20.0,
               right: 55.0,
               top: 10,
               bottom: 16,
