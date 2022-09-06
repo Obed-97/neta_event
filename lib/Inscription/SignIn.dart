@@ -23,10 +23,10 @@ class _SignIn_State extends State<SignIn>
       physics: BouncingScrollPhysics(),
     child:
     Column(children: [
-      SizedBox(height: 30,),
+      SizedBox(height: 100,),
       Image.asset(
         'assets/SlashScreen/netaLogo.png',
-        width: MediaQuery.of(context).size.width * 0.5,
+        width: MediaQuery.of(context).size.width * 0.4,
         height: MediaQuery.of(context).size.height * 0.2 ,
       ),
 
@@ -34,8 +34,8 @@ class _SignIn_State extends State<SignIn>
         children: [
           Container(
             padding: EdgeInsets.only(
-              left: 10.0,
-              right: 40.0,
+              left: 25.0,
+              right: 5.0,
               top: 10,
               bottom: 16,
             ),
@@ -43,6 +43,7 @@ class _SignIn_State extends State<SignIn>
               "Se connecter",
               style: TextStyle(
                 fontSize: 25,
+                fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
             ),
@@ -63,26 +64,26 @@ class _SignIn_State extends State<SignIn>
               user.email = value;
             },
             decoration: InputDecoration(
-              labelText: 'Enter your Email',
+              labelText: 'Adresse e-mail',
               labelStyle: TextStyle(
                 color: Colors.black54,
               ),
-              hintText: "Enter your Email",
+              hintText: "Adresse e-mail",
               prefixIcon: Icon(Icons.mail_outline_outlined , color: Colors.grey,),
               // suffixIcon: Icon(Icons.keyboard_arrow_down), end of the Input Field
               contentPadding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.grey, width: 2),
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.grey, width: 1),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.grey, width: 1.5),
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.grey, width: 1),
               ),
               focusedBorder: OutlineInputBorder(
                 gapPadding: 0.0,
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.purple, width: 1.5),
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.purple, width: 1),
               ),
             ),
           ),
@@ -101,11 +102,11 @@ class _SignIn_State extends State<SignIn>
             onChanged: (value) {
               user.password = value;
             },            decoration: InputDecoration(
-            labelText: 'Password',
+            labelText: 'Mot de passe',
             labelStyle: TextStyle(
               color: Colors.black54,
             ),
-            hintText: "Enter your Password",
+            hintText: "Mot de passe",
             prefixIcon: Icon(Icons.lock_outline , color: Colors.grey,),
             suffixIcon: InkWell(
                 onTap: ()
@@ -117,30 +118,30 @@ class _SignIn_State extends State<SignIn>
             // suffixIcon: Icon(Icons.keyboard_arrow_down), end of the Input Field
             contentPadding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
-              borderSide: BorderSide(color: Colors.grey, width: 2),
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(color: Colors.grey, width: 1),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
-              borderSide: BorderSide(color: Colors.grey, width: 1.5),
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(color: Colors.grey, width: 1),
             ),
             focusedBorder: OutlineInputBorder(
               gapPadding: 0.0,
-              borderRadius: BorderRadius.circular(30),
-              borderSide: BorderSide(color: Colors.purple, width: 1.5),
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(color: Colors.purple, width: 1),
             ),
           ),
           ),
         ),
       ),
-      SizedBox(height: 10,),
+      SizedBox(height: 15,),
       Center(
         child: SizedBox(width: MediaQuery.of(context).size.width *0.9,
           child: Row(children: [
             FlutterSwitch(
               activeColor: Colors.purple,
               width: 55.0,
-              height: 30.0,
+              height: 25.0,
               valueFontSize: 20.0,
               toggleSize: 30.0,
               value: trSwitch,
@@ -157,6 +158,7 @@ class _SignIn_State extends State<SignIn>
             Text(" Se rappeler",
               style: TextStyle(
                 fontSize: 15,
+                fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
             ),
@@ -168,6 +170,7 @@ class _SignIn_State extends State<SignIn>
               child: Text("mot de passe oublié?",
                 style: TextStyle(
                   fontSize: 15,
+                  fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
               ),
@@ -176,7 +179,7 @@ class _SignIn_State extends State<SignIn>
         )
         ,),
 
-      SizedBox(height: 25,),
+      SizedBox(height: 30,),
 
       InkWell(
         onTap: () {
@@ -184,9 +187,9 @@ class _SignIn_State extends State<SignIn>
         child: Container(
           height: 60,
           padding: EdgeInsets.only(
-            left: 55.0,
-            right: 55.0,
-            top: 15,
+            left: 70.0,
+            right: 70.0,
+            top: 16,
             bottom: 5,
           ),
           decoration:
@@ -201,14 +204,14 @@ class _SignIn_State extends State<SignIn>
           child: Text(
             "SE CONNECTER",
             style: TextStyle(
-              fontSize: 23,
+              fontSize: 20,
               color: Colors.white,
             ),
           ),
         ),
       ),
 
-      SizedBox(height: 35,),
+      SizedBox(height: 30,),
       Center(child:SizedBox(
         width: MediaQuery.of(context).size.width * 0.7,
         child: InkWell(
@@ -225,14 +228,7 @@ class _SignIn_State extends State<SignIn>
               decoration:
               new BoxDecoration(
                 color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    offset: Offset(2, 2),
-                    blurRadius: 10.0,
-                    spreadRadius: 2.5,
-                  )
-                ],
+
                 borderRadius: BorderRadius.circular(13.0),
               ),
 
@@ -247,6 +243,7 @@ class _SignIn_State extends State<SignIn>
                   "Se conncter avec Google",
                   style: TextStyle(
                     fontSize: 18,
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
@@ -271,14 +268,7 @@ class _SignIn_State extends State<SignIn>
               decoration:
               new BoxDecoration(
                 color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    offset: Offset(2, 2),
-                    blurRadius: 10.0,
-                    spreadRadius: 2.5,
-                  )
-                ],
+
                 borderRadius: BorderRadius.circular(13.0),
               ),
 
@@ -293,6 +283,7 @@ class _SignIn_State extends State<SignIn>
                   " Se conncter avec Facebook",
                   style: TextStyle(
                     fontSize: 17,
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
@@ -300,7 +291,7 @@ class _SignIn_State extends State<SignIn>
           ),
         ),
       ),),
-      SizedBox(height: 10,),
+      SizedBox(height: 15,),
       SizedBox(child:
       Row(
         mainAxisAlignment: MainAxisAlignment.center ,//Center Row contents horizontally,
@@ -320,7 +311,8 @@ class _SignIn_State extends State<SignIn>
             child: Text(
               " S'inscrire",
               style: TextStyle(
-                fontSize: 13,
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
                 color: Colors.pink,
               ),
             ),

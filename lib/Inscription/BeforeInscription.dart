@@ -11,7 +11,7 @@ class BeforeIncription extends StatefulWidget
 class _BeforeIncription_State extends State<BeforeIncription>
 {
   int indexSelected = 0 ;
-  final List<String> StringChoce = <String>["CLIENT","ORGANISATEUR","SOCIETE"];
+  final List<String> StringChoce = <String>["CLIENT","ORGANISATEUR","SOCIÉTE"];
 
   InkWell Choosed(int i ,String ch)
   {
@@ -53,11 +53,11 @@ class _BeforeIncription_State extends State<BeforeIncription>
            setState(() { this.indexSelected = i; });
          },
            child: Container(
-             height: 65,
+             height: 80,
              padding: EdgeInsets.only(
                left: tr? 35 : 55,
                right: tr? 35 : 55,
-               top: 17,
+               top: 23,
                bottom: 16,
              ),
              decoration:
@@ -84,22 +84,30 @@ class _BeforeIncription_State extends State<BeforeIncription>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        leading: IconButton(icon: Icon(Icons.arrow_back), color: Colors.black, onPressed: () => Navigator.of(context).pop(),),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+              color: Colors.white
+          ),
+        ),
+      ),
       body: Column(
         children: [
-          SizedBox(height: MediaQuery.of(context).size.height *0.07,),
+          SizedBox(height: MediaQuery.of(context).size.height *0.02,),
           Row(
             children: [
               Container(
                 padding: EdgeInsets.only(
-                  left: 10.0,
+                  left: 20.0,
                   right: 55.0,
-                  top: 10,
-                  bottom: 16,
                 ),
                 child: Text(
                   "S'inscrire",
                   style: TextStyle(
                     fontSize: 25,
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
@@ -107,13 +115,9 @@ class _BeforeIncription_State extends State<BeforeIncription>
               SizedBox(width: MediaQuery.of(context).size.width *0.5,)
             ],
           ),
-          Image.asset(
-            'assets/SlashScreen/netaLogo.png',
-            width: MediaQuery.of(context).size.width * 0.5,
-            height: MediaQuery.of(context).size.height * 0.2 ,
-          ),
 
-          SizedBox(height: 20,),
+          SizedBox(height: 50,),
+
           ListView.builder(
             itemCount: StringChoce.length,
             shrinkWrap: true,
@@ -139,9 +143,9 @@ class _BeforeIncription_State extends State<BeforeIncription>
             child: Container(
               height: 50,
               padding: EdgeInsets.only(
-                left: 55.0,
-                right: 55.0,
-                top: 10,
+                left: 90.0,
+                right: 90.0,
+                top: 12,
                 bottom: 5,
               ),
               decoration:

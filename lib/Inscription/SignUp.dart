@@ -23,13 +23,11 @@ class SignUpState extends State<SignUp>
     return Scaffold(
 
       appBar: AppBar(
+        elevation: 0,
+        leading: IconButton(icon: Icon(Icons.arrow_back), color: Colors.black, onPressed: () => Navigator.of(context).pop(),),
         flexibleSpace: Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.purple, Colors.pink],
-              begin: FractionalOffset.centerLeft,
-              end: FractionalOffset.centerRight,
-            ),
+            color: Colors.white
           ),
         ),
       ),
@@ -50,6 +48,7 @@ class SignUpState extends State<SignUp>
               "S'inscrire",
               style: TextStyle(
                 fontSize: 25,
+                fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
             ),
@@ -70,26 +69,26 @@ class SignUpState extends State<SignUp>
               user.name = value;
             },
             decoration: InputDecoration(
-              labelText: 'Enter your username',
+              labelText: "Nom d'utilisateur",
               labelStyle: TextStyle(
                 color: Colors.black54,
               ),
-              hintText: "Enter your Name",
+              hintText: "Nom d'utilisateur",
               prefixIcon: Icon(Icons.person , color: Colors.grey,),
               // suffixIcon: Icon(Icons.keyboard_arrow_down), end of the Input Field
               contentPadding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.grey, width: 2),
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.grey, width: 1),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.grey, width: 1.5),
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.grey, width: 1),
               ),
               focusedBorder: OutlineInputBorder(
                 gapPadding: 0.0,
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.purple, width: 1.5),
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.purple, width: 1),
               ),
             ),
           ),
@@ -108,26 +107,26 @@ class SignUpState extends State<SignUp>
               user.email = value;
             },
             decoration: InputDecoration(
-              labelText: 'Enter your Email',
+              labelText: 'Adresse e-mail',
               labelStyle: TextStyle(
                 color: Colors.black54,
               ),
-              hintText: "Enter your Email",
+              hintText: "Adresse e-mail",
               prefixIcon: Icon(Icons.mail_outline_outlined , color: Colors.grey,),
               // suffixIcon: Icon(Icons.keyboard_arrow_down), end of the Input Field
               contentPadding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.grey, width: 2),
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.grey, width: 1),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.grey, width: 1.5),
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.grey, width: 1),
               ),
               focusedBorder: OutlineInputBorder(
                 gapPadding: 0.0,
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.purple, width: 1.5),
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.purple, width: 1),
               ),
             ),
           ),
@@ -146,11 +145,11 @@ class SignUpState extends State<SignUp>
             onChanged: (value) {
               user.password = value;
             },            decoration: InputDecoration(
-              labelText: 'Password',
+              labelText: 'Mot de passe',
               labelStyle: TextStyle(
                 color: Colors.black54,
               ),
-              hintText: "Enter your Password",
+              hintText: "Mot de passe",
               prefixIcon: Icon(Icons.lock_outline , color: Colors.grey,),
               suffixIcon: InkWell(
                   onTap: ()
@@ -162,17 +161,17 @@ class SignUpState extends State<SignUp>
               // suffixIcon: Icon(Icons.keyboard_arrow_down), end of the Input Field
               contentPadding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.grey, width: 2),
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.grey, width: 1),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.grey, width: 1.5),
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.grey, width: 1),
               ),
               focusedBorder: OutlineInputBorder(
                 gapPadding: 0.0,
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.purple, width: 1.5),
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.purple, width: 1),
               ),
             ),
           ),
@@ -191,11 +190,11 @@ class SignUpState extends State<SignUp>
             onChanged: (value) {
               ConfirmePassword = value;
             },            decoration: InputDecoration(
-            labelText: 'Password',
+            labelText: 'Confirmer mot de passe',
             labelStyle: TextStyle(
               color: Colors.black54,
             ),
-            hintText: "Enter your Password",
+            hintText: "Confirmer mot de passe",
             prefixIcon: Icon(Icons.lock_outline , color: Colors.grey,),
             suffixIcon: InkWell(
                 onTap: ()
@@ -207,17 +206,17 @@ class SignUpState extends State<SignUp>
             // suffixIcon: Icon(Icons.keyboard_arrow_down), end of the Input Field
             contentPadding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
-              borderSide: BorderSide(color: Colors.grey, width: 2),
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(color: Colors.grey, width: 1),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
-              borderSide: BorderSide(color: Colors.grey, width: 1.5),
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(color: Colors.grey, width: 1),
             ),
             focusedBorder: OutlineInputBorder(
               gapPadding: 0.0,
-              borderRadius: BorderRadius.circular(30),
-              borderSide: BorderSide(color: Colors.purple, width: 1.5),
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(color: Colors.purple, width: 1),
             ),
           ),
           ),
@@ -230,9 +229,9 @@ class SignUpState extends State<SignUp>
         child: Container(
           height: 60,
           padding: EdgeInsets.only(
-            left: 55.0,
-            right: 55.0,
-            top: 15,
+            left: 80.0,
+            right: 80.0,
+            top: 17,
             bottom: 5,
           ),
           decoration:
@@ -247,13 +246,13 @@ class SignUpState extends State<SignUp>
           child: Text(
             "S'INSCRIRE",
             style: TextStyle(
-              fontSize: 23,
+              fontSize: 21,
               color: Colors.white,
             ),
           ),
         ),
       ),
-      SizedBox(height: 40,),
+      SizedBox(height: 25,),
       Center(child:
         Text("OU",
           style: TextStyle(
@@ -278,14 +277,7 @@ class SignUpState extends State<SignUp>
               decoration:
               new BoxDecoration(
                 color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    offset: Offset(2, 2),
-                    blurRadius: 10.0,
-                    spreadRadius: 2.5,
-                  )
-                ],
+
                 borderRadius: BorderRadius.circular(13.0),
               ),
 
@@ -300,6 +292,7 @@ class SignUpState extends State<SignUp>
                   "Se conncter avec Google",
                   style: TextStyle(
                     fontSize: 18,
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
@@ -318,20 +311,13 @@ class SignUpState extends State<SignUp>
               padding: EdgeInsets.only(
                 left: 10.0,
                 right: 10.0,
-                top: 10,
-                bottom: 5,
+                top: 7,
+                bottom: 2,
               ),
               decoration:
               new BoxDecoration(
                 color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    offset: Offset(2, 2),
-                    blurRadius: 10.0,
-                    spreadRadius: 2.5,
-                  )
-                ],
+
                 borderRadius: BorderRadius.circular(13.0),
               ),
 
@@ -346,6 +332,7 @@ class SignUpState extends State<SignUp>
                   " Se conncter avec Facebook",
                   style: TextStyle(
                     fontSize: 17,
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
@@ -353,7 +340,7 @@ class SignUpState extends State<SignUp>
           ),
         ),
       ),),
-      SizedBox(height: 10,),
+      SizedBox(height: 15,),
            SizedBox(child:
           Row(
             mainAxisAlignment: MainAxisAlignment.center ,//Center Row contents horizontally,
@@ -371,16 +358,17 @@ class SignUpState extends State<SignUp>
                 Navigator.pushNamed(context, '/SignIn');
               },
               child: Text(
-                " Signin",
+                " Se connecter",
                 style: TextStyle(
-                  fontSize: 13,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
                   color: Colors.pink,
                 ),
               ),
             ),
           ],) ,
           ),
-      SizedBox(height: 50,),
+      SizedBox(height: 100,),
 
     ],),),
     );

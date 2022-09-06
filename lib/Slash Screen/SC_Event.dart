@@ -34,9 +34,9 @@ class _SC_EventState extends State<SC_Event>
                 children: [
                   Image.asset(
                     'assets/SlashScreen/event.png',
-                    width: MediaQuery.of(context).size.width * 0.55,
-                    height: MediaQuery.of(context).size.height * 0.55,
-                    scale: 0.35,
+                    width: MediaQuery.of(context).size.width * 0.60,
+                    height: MediaQuery.of(context).size.height * 0.60,
+                    scale: 0.60,
                   ),
                   //   SizedBox(height:MediaQuery.of(context).size.height * 0.2 ,) ,
                   Row(children: [
