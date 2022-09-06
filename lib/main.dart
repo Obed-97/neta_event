@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neta_event/Home/HomePage.dart';
 import 'package:neta_event/Inscription/BeforeInscription.dart';
 import 'package:neta_event/Inscription/SignIn.dart';
 import 'package:neta_event/Inscription/SignUp.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
           '/BeforeInscription': (context) => const BeforeIncription(),
           '/SignUp': (context) => SignUp(),
           '/SignIn' : (context) => SignIn(),
+          '/HomePage' : (context) => HomePage(),
         },
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
