@@ -162,7 +162,7 @@ class _SignIn_State extends State<SignIn>
                 color: Colors.black,
               ),
             ),
-            SizedBox(width: MediaQuery.of(context).size.width *0.19,),
+            SizedBox(width: MediaQuery.of(context).size.width *0.15,),
             InkWell(
               onTap: () {
 
