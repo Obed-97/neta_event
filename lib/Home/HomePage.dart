@@ -58,6 +58,7 @@ import 'dart:ui';
                             Text("Hey Bienvenue..",
                               style: TextStyle(
                                 fontSize: 15,
+                                fontFamily: 'Inter',
                                 color: Colors.white,
                               ),
                             ),
@@ -65,6 +66,7 @@ import 'dart:ui';
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 19,
+                                fontFamily: 'Inter',
                                 color: Colors.white,
                               ),
                             ),
@@ -130,6 +132,7 @@ import 'dart:ui';
                               "Filtres",
                               style: TextStyle(
                                 fontSize:15,
+                                fontFamily: 'Inter',
                                 color: Colors.white,
                               ),
                             ),
