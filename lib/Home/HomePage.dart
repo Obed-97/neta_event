@@ -23,7 +23,7 @@ import 'dart:ui';
             Icon(Icons.more_vert),
           ],*/
           backgroundColor: Colors.transparent,
-          toolbarHeight: MediaQuery.of(context).size.height *0.15, //set your height
+          toolbarHeight: MediaQuery.of(context).size.height *0.19, //set your height
           flexibleSpace: SafeArea(
             child: Container(
               padding: EdgeInsets.only(
@@ -33,8 +33,8 @@ import 'dart:ui';
               decoration:
               const BoxDecoration(
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(35),
-                  bottomRight: Radius.circular(35),
+                  bottomLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(30),
                 ),
                 gradient:  LinearGradient(
                   colors: [Colors.purple, Colors.pink],
@@ -51,11 +51,11 @@ import 'dart:ui';
                               onTap: () {
                                 _key.currentState!.openDrawer();
                               },
-                            child: Icon (Icons.dehaze_rounded, color: Colors.white,size : 35),
+                            child: Image.asset("assets/SlashScreen/menus.png", width: 35, height: 35,),
                           ),
-                          SizedBox(width: MediaQuery.of(context).size.width * 0.24,),
+                          SizedBox(width: MediaQuery.of(context).size.width * 0.25,),
                           Column(children: const [
-                            Text("Hey Bienvenue",
+                            Text("Hey Bienvenue..",
                               style: TextStyle(
                                 fontSize: 15,
                                 color: Colors.white,
@@ -64,7 +64,7 @@ import 'dart:ui';
                             Text("Sanago Yaya",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 18,
+                                fontSize: 19,
                                 color: Colors.white,
                               ),
                             ),
@@ -74,12 +74,12 @@ import 'dart:ui';
                             onTap: () {
 
                             },
-                            child: const Icon (Icons.notifications_none, color: Colors.white,size : 35),
+                            child: const Icon (Icons.notifications_none, color: Colors.white,size : 30),
                           ),
 
                         ],
                       ),
-                  SizedBox(height:MediaQuery.of(context).size.height *0.01 ,),
+                  SizedBox(height:MediaQuery.of(context).size.height *0.04 ,),
                   Row(children: [
                     SizedBox(width:MediaQuery.of(context).size.width *0.03 ,),
                     InkWell(
@@ -93,28 +93,26 @@ import 'dart:ui';
                       height: 22,
                       child: Text(""),
                       decoration: const BoxDecoration(
-                        border: Border(
-                          left: BorderSide(color: Colors.blue , width: 2.8),
-                        ),
+
                       ),
                     ),
-                    SizedBox(width:MediaQuery.of(context).size.width *0.02 ,),
+                    SizedBox(width:MediaQuery.of(context).size.width * 0.01 ,),
                     const SizedBox(width: 150, height: 30,
                     child: TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'Username',
+                        hintText: 'Recherche...',
                         hintStyle: TextStyle(fontSize: 15.0, color: Colors.grey),
                       ),
                     ),
                     ),
 
-                    SizedBox(width:MediaQuery.of(context).size.width *0.02 ,),
+                    SizedBox(width:MediaQuery.of(context).size.width *0.17,),
                     Container(
-                      height: 45,
+                      height: 37,
                       padding: const EdgeInsets.only(
-                        left: 30.0,
-                        right: 30.0,
+                        left: 15.0,
+                        right: 15.0,
                         top: 5,
                         bottom: 2,
                       ),
@@ -126,12 +124,12 @@ import 'dart:ui';
                       child:
                         Row(
                           children: [
-                            Icon (Icons.dehaze_rounded, color: Colors.white,size : 20),
-                            SizedBox(width: 10,),
+                            Image.asset("assets/SlashScreen/sort.png", width: 20, height: 20,),
+                            SizedBox(width: 5,),
                             Text(
                               "Filtres",
                               style: TextStyle(
-                                fontSize:17,
+                                fontSize:15,
                                 color: Colors.white,
                               ),
                             ),
