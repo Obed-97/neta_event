@@ -134,7 +134,7 @@ class _SignIn_State extends State<SignIn>
           ),
         ),
       ),
-      SizedBox(height: 15,),
+      SizedBox(height: 20,),
       Center(
         child: SizedBox(width: MediaQuery.of(context).size.width *0.9,
           child: Row(children: [
@@ -162,7 +162,7 @@ class _SignIn_State extends State<SignIn>
                 color: Colors.black,
               ),
             ),
-            SizedBox(width: MediaQuery.of(context).size.width *0.15,),
+            SizedBox(width: MediaQuery.of(context).size.width * 0.21,),
             InkWell(
               onTap: () {
 

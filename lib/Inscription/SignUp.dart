@@ -260,7 +260,7 @@ class SignUpState extends State<SignUp>
           color: Colors.grey,
         ),
         ),),
-      SizedBox(height: 20,),
+      SizedBox(height: 10,),
       Center(child:SizedBox(
         width: MediaQuery.of(context).size.width * 0.7,
         child: InkWell(
