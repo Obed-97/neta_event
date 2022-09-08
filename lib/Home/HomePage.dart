@@ -15,20 +15,22 @@ class _HomePage_State extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
+
       drawer: ClipRRect(
         borderRadius: BorderRadius.only(
             topRight: Radius.circular(35), bottomRight: Radius.circular(35)),
         child: Drawer(
           child: ListView(
             children: [
+              SizedBox(height: 20,),
               Row(
                 children: [
                   SizedBox(
-                    width: 20,
+                    width: 25,
                   ),
                   Material(
                     color: Colors.black,
-                    elevation: 4,
+                    elevation: 0,
                     shape: CircleBorder(),
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: InkWell(
@@ -38,13 +40,13 @@ class _HomePage_State extends State<HomePage> {
                         decoration: BoxDecoration(
                           color: Colors.transparent,
                           border: Border.all(
-                              color: Color.fromARGB(0, 0, 0, 0), width: 2),
+                              color: Color.fromARGB(0, 0, 0, 0), width: 0),
                           shape: BoxShape.circle,
                         ),
                         child: Ink.image(
-                          image: AssetImage("assets/SlashScreen/netaLogo.png"),
-                          height: 61,
-                          width: 62,
+                          image: AssetImage("assets/SlashScreen/saidou.jpg"),
+                          height: 75,
+                          width: 75,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -60,25 +62,24 @@ class _HomePage_State extends State<HomePage> {
                             left: 1,
                             right: 1), //apply padding to some sides only
                         child: Text(
-                          "Sanogo Yaya",
+                          "Saidou Sawadogo",
                           style: TextStyle(
                             fontSize: 19,
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'Inter',
                             color: Colors.black,
                           ),
                         ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                            left: 1,
+                            top: 5,
+                            left: 0,
                             right: 1), //apply padding to some sides only
                         child: Text(
                           "Client ",
                           style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 15,
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'Inter',
                             color: Color(0xFFBCBCBC),
                           ),
                         ),
@@ -87,41 +88,69 @@ class _HomePage_State extends State<HomePage> {
                   )
                 ],
               ),
-              const ListTile(
-                leading: Icon(Icons.person_outline_rounded),
-                title: Text('Profile'),
+              SizedBox(height: 40,),
+              Padding(
+                padding:  EdgeInsets.only(left: 30),
+                child: const ListTile(
+                  leading: Icon(Icons.person_outline_rounded, color: Colors.black,),
+                  title: Text('Profile', style: TextStyle(fontSize: 18,  ),),
+                ),
               ),
-              const ListTile(
-                leading: Icon(Icons.calendar_today_outlined),
-                title: Text('Evènements'),
+              Padding(
+                padding:  EdgeInsets.only(left: 30),
+                child: const ListTile(
+                  leading: Icon(Icons.calendar_today_outlined, color: Colors.black,),
+                  title: Text('Evènements', style: TextStyle(fontSize: 18,  ),),
+                ),
               ),
-              const ListTile(
-                leading: Icon(Icons.star_border_outlined),
-                title: Text('Favoris'),
+              Padding(
+                padding:  EdgeInsets.only(left: 30),
+                child: const ListTile(
+                  leading: Icon(Icons.star_border_outlined, color: Colors.black,),
+                  title: Text('Favoris', style: TextStyle(fontSize: 18,  ),),
+                ),
               ),
-              const ListTile(
-                leading: Icon(Icons.email_outlined),
-                title: Text('Contacter-nous'),
+              Padding(
+                padding:  EdgeInsets.only(left: 30),
+                child: const ListTile(
+                  leading: Icon(Icons.email_outlined, color: Colors.black,),
+                  title: Text('Contacter-nous', style: TextStyle(fontSize: 18,  ),),
+                ),
               ),
-              const ListTile(
-                leading: Icon(Icons.help_outline_outlined),
-                title: Text('Aide & FAQs'),
+              Padding(
+                padding:  EdgeInsets.only(left: 30),
+                child: const ListTile(
+                  leading: Icon(Icons.help_outline_outlined, color: Colors.black,),
+                  title: Text('Aide & FAQs', style: TextStyle(fontSize: 18,  ),),
+                ),
               ),
-              const ListTile(
-                leading: Icon(Icons.handshake),
-                title: Text('Don'),
+              Padding(
+                padding:  EdgeInsets.only(left: 30),
+                child: const ListTile(
+                  leading: Icon(Icons.handshake, color: Colors.black,),
+                  title: Text('Don', style: TextStyle(fontSize: 18,  ),),
+                ),
               ),
-              const ListTile(
-                leading: Icon(Icons.handshake),
-                title: Text('Tontine'),
+              Padding(
+                padding:  EdgeInsets.only(left: 30),
+                child: const ListTile(
+                  leading: Icon(Icons.handshake, color: Colors.black,),
+                  title: Text('Tontine', style: TextStyle(fontSize: 18,  ),),
+                ),
               ),
-              const ListTile(
-                leading: Icon(Icons.calendar_today_outlined),
-                title: Text('Enquète'),
+              Padding(
+                padding:  EdgeInsets.only(left: 30),
+                child: const ListTile(
+                  leading: Icon(Icons.calendar_today_outlined, color: Colors.black,),
+                  title: Text('Enquète', style: TextStyle(fontSize: 18,  ),),
+                ),
               ),
-              const ListTile(
-                leading: Icon(Icons.login_outlined),
-                title: Text('Se dèconnecter'),
+              Padding(
+                padding:  EdgeInsets.only(left: 30),
+                child: const ListTile(
+                  leading: Icon(Icons.login_outlined, color: Colors.black,),
+                  title: Text('Se deconnecter', style: TextStyle(fontSize: 18,  ),),
+                ),
               ),
             ],
           ),
@@ -167,7 +196,7 @@ class _HomePage_State extends State<HomePage> {
                       ),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.22,
+                      width: MediaQuery.of(context).size.width * 0.20,
                     ),
                     Column(
                       children: const [
@@ -179,18 +208,17 @@ class _HomePage_State extends State<HomePage> {
                           ),
                         ),
                         Text(
-                          "Sanago Yaya",
+                          "Saidou Sawadogo",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 19,
-                            fontFamily: 'Inter',
                             color: Colors.white,
                           ),
                         ),
                       ],
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.23,
+                      width: MediaQuery.of(context).size.width * 0.15,
                     ),
                     InkWell(
                       onTap: () {},
@@ -200,7 +228,7 @@ class _HomePage_State extends State<HomePage> {
                   ],
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.01,
+                  height: MediaQuery.of(context).size.height * 0.05,
                 ),
                 Row(
                   children: [
@@ -220,14 +248,10 @@ class _HomePage_State extends State<HomePage> {
                     Container(
                       height: 22,
                       child: Text(""),
-                      decoration: const BoxDecoration(
-                        border: Border(
-                          left: BorderSide(color: Colors.blue, width: 2.8),
-                        ),
-                      ),
+
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.02,
+                      width: MediaQuery.of(context).size.width * 0.03,
                     ),
                     const SizedBox(
                       width: 150,
@@ -242,13 +266,13 @@ class _HomePage_State extends State<HomePage> {
                       ),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.02,
+                      width: MediaQuery.of(context).size.width * 0.10,
                     ),
                     Container(
-                        height: 45,
+                        height: 40,
                         padding: const EdgeInsets.only(
-                          left: 30.0,
-                          right: 30.0,
+                          left: 20.0,
+                          right: 20.0,
                           top: 10,
                           bottom: 10,
                         ),
@@ -264,13 +288,12 @@ class _HomePage_State extends State<HomePage> {
                               height: 20,
                             ),
                             SizedBox(
-                              width: 5,
+                              width: 3,
                             ),
                             Text(
                               "Filtres",
                               style: TextStyle(
                                 fontSize: 15,
-                                fontFamily: 'Inter',
                                 color: Colors.white,
                               ),
                             ),
