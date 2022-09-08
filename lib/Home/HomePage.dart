@@ -331,6 +331,7 @@ class _HomePage_State extends State<HomePage> {
                 Icon(Icons.arrow_right , size: 25,color: Color(0xFF747688),),
               ],
             ),
+            SizedBox(height: 15,),
             SingleChildScrollView(
             //changing scroll direction into horizontal
             scrollDirection: Axis.horizontal,
