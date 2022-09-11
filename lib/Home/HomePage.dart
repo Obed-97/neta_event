@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
+import 'package:neta_event/Home/navbar.dart';
+//Icon: Icons.bookmark_outline_sharp,
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -306,58 +309,254 @@ class _HomePage_State extends State<HomePage> {
           ),
         ),
       ),
-
-      body : SingleChildScrollView(
-          padding: EdgeInsets.only(left: 33),
-          child: Column ( children: [
-            SizedBox(height: 30,),
-            Row(
-              children: [
-                Text(
-                  "Excusives",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF120D26),
-                  ),),
-                  SizedBox(width: 121,),
-                Text(
-                  "Voir tout",
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF747688),
-                  ),),
-                Icon(Icons.arrow_right , size: 25,color: Color(0xFF747688),),
-              ],
-            ),
-            SizedBox(height: 15,),
-            SingleChildScrollView(
-            //changing scroll direction into horizontal
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: <Widget>[
-                getCardEvent(),
-                SizedBox(width: 10,),
-                getCardEvent(),
-                SizedBox(width: 10,),
-                getCardEvent(),
-                SizedBox(width: 10,),
-                getCardEvent(),
-                SizedBox(width: 10,),
-                getCardEvent(),
-                SizedBox(width: 10,),
-                getCardEvent(),
-              ],
-            ),),
-          ], )
+      body : Stack(
+        children: <Widget>[
+          Home(),
+          bottomBar(),
+        ],
       ),
-
     );
   }
 }
 
+Widget Home()
+{
+ return SingleChildScrollView(
+    padding: EdgeInsets.only(left: 33),
+    child: Column ( children: [
+      SizedBox(height: 30,),
+      Row(
+        children: [
+          Text(
+            "Excusives",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF120D26),
+            ),),
+          SizedBox(width: 160,),
+          Text(
+            "Voir tout",
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF747688),
+            ),),
+          Icon(Icons.arrow_right , size: 25,color: Color(0xFF747688),),
+        ],
+      ),
+      SizedBox(height: 15,),
+      SingleChildScrollView(
+        //changing scroll direction into horizontal
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: <Widget>[
+            getCardEvent(),
+            SizedBox(width: 10,),
+            getCardEvent(),
+            SizedBox(width: 10,),
+            getCardEvent(),
+            SizedBox(width: 10,),
+            getCardEvent(),
+            SizedBox(width: 10,),
+            getCardEvent(),
+            SizedBox(width: 10,),
+            getCardEvent(),
+          ],
+        ),),
+      SizedBox(height: 30,),
+      Row(
+        children: [
+          Text(
+            "Catégories",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF120D26),
+            ),),
+          SizedBox(width: 160,),
+          Text(
+            "Voir tout",
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF747688),
+            ),),
+          Icon(Icons.arrow_right , size: 25,color: Color(0xFF747688),),
+        ],
+      ),
+      SizedBox(height: 15,),
+      SingleChildScrollView(
+        //changing scroll direction into horizontal
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: <Widget>[
+            getCategories(),
+            SizedBox(width: 10,),
+            getCategories(),
+            SizedBox(width: 10,),
+            getCategories(),
+            SizedBox(width: 10,),
+            getCategories(),
+            SizedBox(width: 10,),
+            getCategories(),
+            SizedBox(width: 10,),
+            getCategories(),
+          ],
+        ),),
+      SizedBox(height: 30,),
+      Row(
+        children: [
+          Text(
+            "Evènement",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF120D26),
+            ),),
+          SizedBox(width: 160,),
+          Text(
+            "Voir tout",
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF747688),
+            ),),
+          Icon(Icons.arrow_right , size: 25,color: Color(0xFF747688),),
+        ],
+      ),
+      SizedBox(height: 15,),
+      SingleChildScrollView(
+        //changing scroll direction into horizontal
+        scrollDirection: Axis.horizontal,
+        child: Column(
+          children: <Widget>[
+            getEvents(),
+            SizedBox(height: 20,),
+            getEvents(),
+            SizedBox(height: 20,),
+            getEvents(),
+            SizedBox(height: 20,),
+            getEvents(),
+            SizedBox(height: 20,),
+            getEvents(),
+            SizedBox(height: 20,),
+            getEvents(),
+            SizedBox(height: 20,),
+            getEvents(),
+            SizedBox(height: 20,),
 
+          ],
+        ),),
+    ], ),
+  );
+}
+
+Widget getEvents()
+{
+  return Container(
+      height: 112,
+      width: 327,
+      padding: EdgeInsets.only(
+        left: 10.0,
+        //right: 9.0,
+        top: 9,
+        bottom: 10,
+      ),
+      decoration:
+      new BoxDecoration(
+        borderRadius: BorderRadius.circular(18.0),
+        color: Colors.white,
+      ),
+      child: Row(
+        children: [
+          Image.asset(
+            "assets/SlashScreen/testimage.png",
+            width: 79,
+            height: 93,
+          ),
+         // SizedBox(width: 20,),
+
+          Container(
+            padding: EdgeInsets.only(
+              left: 25.0,
+              right: 10.0,
+              top: 20,
+              bottom: 10,
+            ),
+            child: Column(
+              children: [
+                Text(
+                  "1ER MAY-LUN -2:00 PM",
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF5669FF),
+                  ),),
+                SizedBox(height: 3,),
+                Text(
+                  "One man show ramatonlaye ",
+                  style:  TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                  softWrap: true,
+                  maxLines: 3,
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.location_on_rounded,size: 20,color:  Color(0xFF747688),),
+                    SizedBox(width: 10,),
+                    Text(
+                      "Radius Gallery • Santa Cruz",
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF747688),
+                      ),),
+                  ],
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+  );
+}
+
+Widget getCategories()
+{
+  return Stack(
+      alignment: Alignment.center,
+      children: <Widget>[
+        Container(
+          child:  ClipRRect(
+            borderRadius: BorderRadius.circular(10.0),
+            child:
+            Image.asset(
+              "assets/SlashScreen/testimage.png",
+               width: 218,
+               height: 131,
+            ),
+          ),
+        ),
+        Container(
+          width: 80,
+          padding: EdgeInsets.only(
+            left: 23.0,
+            top: 10.0,
+          ),
+          child:Text(
+            "Musique & chants",
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),),
+      ]);
+}
 
 Widget getCardEvent()
 {
@@ -418,18 +617,12 @@ Widget getCardEvent()
                             GradientText(
                               '10',
                               style: const TextStyle(fontSize: 13,fontWeight: FontWeight.bold,),
-                              gradient: LinearGradient(colors: [
-                                Colors.purple,
-                                Colors.pink
-                              ]),
+
                             ),
                             GradientText(
                               'Mai',
                               style: const TextStyle(fontSize: 13,fontWeight: FontWeight.bold,),
-                              gradient: LinearGradient(colors: [
-                                Colors.purple,
-                                Colors.pink
-                              ]),
+
                             ),
                           ],
                         )
@@ -448,16 +641,8 @@ Widget getCardEvent()
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             GradientIcon(
-                              Icons.star,
+                              Icons.bookmark_outlined,
                               20.0,
-                              const LinearGradient(
-                                colors: [
-                                  Colors.purple,
-                                  Colors.pink
-                                ],
-                                begin: Alignment.topLeft,
-                                end: Alignment.centerRight,
-                              ),
                             ),
                           ],
                         )
@@ -494,62 +679,25 @@ Widget getCardEvent()
               GradientIcon(
                 Icons.star,
                 15.0,
-                const LinearGradient(
-                  colors: [
-                    Colors.purple,
-                    Colors.pink
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.centerRight,
-                ),
               ),
               GradientIcon(
                 Icons.star,
                 15.0,
-                const LinearGradient(
-                  colors: [
-                    Colors.purple,
-                    Colors.pink
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.centerRight,
-                ),
+
               ),
               GradientIcon(
                 Icons.star,
                 15.0,
-                const LinearGradient(
-                  colors: [
-                    Colors.purple,
-                    Colors.pink
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.centerRight,
-                ),
+
               ),
               GradientIcon(
                 Icons.star,
                 15.0,
-                const LinearGradient(
-                  colors: [
-                    Colors.purple,
-                    Colors.pink
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.centerRight,
-                ),
+
               ),
               GradientIcon(
                 Icons.star,
                 15.0,
-                const LinearGradient(
-                  colors: [
-                    Colors.grey,
-                    Colors.white30,
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.centerRight,
-                ),
               ),
               SizedBox(width: 37,),
               Text(
@@ -586,16 +734,192 @@ Widget getCardEvent()
   );
 }
 
+class TabIconData {
+  TabIconData({
+   // this.imagePath = null ,
+    this.icon,
+    this.selectedIcon,
+    this.index = 0,
+    this.isSelected = false,
+    this.animationController,
+  });
+
+  Widget? icon;
+  Widget? selectedIcon;
+  bool isSelected;
+  int index;
+  AnimationController? animationController;
+
+  static List<TabIconData> tabIconsList = <TabIconData>[
+    TabIconData(
+      icon: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+        Icon(Icons.cable_rounded, color : Color(0xFFDADADA)),
+        Text(
+          "Decouvrir",
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+      ],),
+      selectedIcon: Column(
+  crossAxisAlignment: CrossAxisAlignment.center,
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    GradientIconNav(
+        Icons.star,
+      ),
+    GradientText("Decouvrir",
+      style: TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.bold,
+        color: Colors.black,
+      ),)
+  ]),
+      index: 0,
+      isSelected: true,
+      animationController: null,
+    ),
+    TabIconData(
+      icon: Column(
+  crossAxisAlignment: CrossAxisAlignment.center,
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+  Icon(Icons.calendar_month ,color : Color(0xFFDADADA)),
+  Text(
+  "Event",
+  style: TextStyle(
+  fontSize: 12,
+  fontWeight: FontWeight.bold,
+  color: Colors.black,
+  ),
+  ),
+  ],),
+      selectedIcon: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GradientIconNav(
+              Icons.star,
+            ),
+            GradientText("Event",
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),)
+          ]),
+      index: 1,
+      isSelected: false,
+      animationController: null,
+    ),
+    TabIconData(
+      icon: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.cable_rounded,  color : Color(0xFFDADADA)),
+          Text(
+            "Decouvrir",
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ],),
+      selectedIcon: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GradientIconNav(
+              Icons.star,
+            ),
+            GradientText("Decouvrir",
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),)
+          ]),
+      index: 2,
+      isSelected: false,
+      animationController: null,
+    ),
+    TabIconData(
+      icon: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.cable_rounded,  color : Color(0xFFDADADA)),
+          Text(
+            "Tickets",
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ],),
+      selectedIcon: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GradientIconNav(
+              Icons.star,
+            ),
+            GradientText("Deconnecter",
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),)
+          ]),
+      index: 3,
+      isSelected: false,
+      animationController: null,
+    ),
+  ];
+}
+
+Widget bottomBar() {
+  return Column(
+    children: <Widget>[
+      const Expanded(
+        child: SizedBox(),
+      ),
+      BottomBarView(
+        tabIconsList: TabIconData.tabIconsList,
+        addClick: () {
+         print("Profil");
+        },
+        changeIndex: (int index) {
+        },
+      ),
+    ],
+  );
+}
+
 class GradientText extends StatelessWidget {
-  const GradientText(
+   GradientText(
       this.text, {
-        required this.gradient,
         this.style,
       });
 
   final String text;
   final TextStyle? style;
-  final Gradient gradient;
+  final Gradient gradient = LinearGradient(
+    colors: [
+      Colors.purple,
+      Colors.pink
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.centerRight,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -613,12 +937,18 @@ class GradientIcon extends StatelessWidget {
   GradientIcon(
       this.icon,
       this.size,
-      this.gradient,
       );
 
   final IconData icon;
   final double size;
-  final Gradient gradient;
+  final Gradient gradient = LinearGradient(
+    colors: [
+      Colors.purple,
+      Colors.pink
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.centerRight,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -634,6 +964,40 @@ class GradientIcon extends StatelessWidget {
       ),
       shaderCallback: (Rect bounds) {
         final Rect rect = Rect.fromLTRB(0, 0, size, size);
+        return gradient.createShader(rect);
+      },
+    );
+  }
+}
+
+class GradientIconNav extends StatelessWidget {
+  GradientIconNav(
+      this.icon,
+      );
+  final IconData icon;
+  final Gradient gradient = LinearGradient(
+    colors: [
+      Colors.purple,
+      Colors.pink
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.centerRight,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return ShaderMask(
+      child: SizedBox(
+       // width: size * 1.2,
+       // height: size * 1.2,
+        child: Icon(
+          icon,
+          size: 35,
+          color: Colors.white,
+        ),
+      ),
+      shaderCallback: (Rect bounds) {
+        final Rect rect = Rect.fromLTRB(0, 0, 30, 30);
         return gradient.createShader(rect);
       },
     );
