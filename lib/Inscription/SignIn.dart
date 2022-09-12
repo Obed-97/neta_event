@@ -190,7 +190,7 @@ class _SignIn_State extends State<SignIn> {
                       ),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.18,
+                      width: MediaQuery.of(context).size.width * 0.15,
                     ),
                     InkWell(
                       onTap: () {},
