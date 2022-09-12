@@ -18,7 +18,6 @@ class _HomePage_State extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
-
       drawer: ClipRRect(
         borderRadius: BorderRadius.only(
             topRight: Radius.circular(35), bottomRight: Radius.circular(35)),
@@ -284,7 +283,7 @@ class _HomePage_State extends State<HomePage> {
                           color: Color(0xFF701D53),
                         ),
                         child: Row(
-                          children: [
+                            children: [
                             Image.asset(
                               "assets/SlashScreen/sort.png",
                               width: 20,
@@ -438,16 +437,44 @@ Widget Home()
             getEvents(),
             SizedBox(height: 20,),
             getEvents(),
-            SizedBox(height: 20,),
-            getEvents(),
-            SizedBox(height: 20,),
-            getEvents(),
-            SizedBox(height: 20,),
-            getEvents(),
-            SizedBox(height: 20,),
 
           ],
         ),),
+      Row(
+        children: [
+          Text(
+            "Packs",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF120D26),
+            ),),
+          SizedBox(width: 160,),
+          Text(
+            "Voir tout",
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF747688),
+            ),),
+          Icon(Icons.arrow_right , size: 25,color: Color(0xFF747688),),
+        ],
+      ),
+      SizedBox(height: 15,),
+      SingleChildScrollView(
+        //changing scroll direction into horizontal
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: <Widget>[
+            getPacks(1),
+            SizedBox(width: 10,),
+            getPacks(2),
+            SizedBox(width: 10,),
+            getPacks(3),
+            SizedBox(width: 10,),
+          ],
+        ),),
+      SizedBox(height: 250,),
     ], ),
   );
 }
@@ -556,6 +583,165 @@ Widget getCategories()
             ),
           ),),
       ]);
+}
+
+
+
+Widget getPacks(int i)
+{
+  String pack="";
+  String namepack="";
+  if(i==1)
+  {
+    pack = "assets/SlashScreen/packbronze.png";
+    namepack="Bronze";
+  }
+  else if (i==2)
+  {
+    pack = "assets/SlashScreen/packsilver.png";
+    namepack="Silver";
+  }
+  else
+  {
+    pack = "assets/SlashScreen/packgold.png";
+    namepack="Gold";
+  }
+
+  {
+    return Container(
+        height: 265+58,
+        width: 244,
+        decoration:
+        new BoxDecoration(
+          borderRadius: BorderRadius.circular(13.0),
+          color: Colors.transparent,
+        ),
+        child: Column (
+          children: [
+            Stack(
+              children: <Widget>[
+                Container(
+                  child:  ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                    child:
+                    Image.asset(
+                      pack,
+                      height : 270,
+                      width: 244,
+                    ),
+                  ),
+                ),
+                Column(
+                  children: [
+                    Row(children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                          left: 65,
+                          top: 25,
+                          //right: 50.0,
+                        ),
+                        child:     Text("Pack $namepack", style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),),
+                      ),
+                    ],),
+
+                    SizedBox(height: 20,),
+
+                    Row(children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                          left: 65,
+                          top: 10,
+                          //right: 50.0,
+                        ),
+                        child: Text("10 Fcfa", style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),),
+                      ),
+                    ],),
+
+                    SizedBox(height: 15,),
+                    Row(children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                          left: 45,
+                          top: 1,
+                          //right: 50.0,
+                        ),
+                        child: Icon(Icons.check_circle_sharp, color : Colors.black),
+                      ),
+                      SizedBox(width: 15,),
+                      Text("3 évenèments" , style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),),
+                    ],),
+
+                    SizedBox(height: 15,),
+                    Row(
+                      children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                          left: 45,
+                          top: 1,
+                          //right: 50.0,
+                        ),
+                        child: Icon(Icons.check_circle_sharp, color : Colors.black),
+                      ),
+                      SizedBox(width: 15,),
+                      Text("7 jours de publicité" , style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),),
+                    ],),
+                    SizedBox(height: 20,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                      Container(
+                        child: InkWell(
+                          onTap: () {
+                          },
+                          child: Container(
+                            padding: EdgeInsets.only(
+                              left: 21,
+                              right: 21,
+                              top : 5,
+                              bottom: 5,
+                            ),
+                            height: 28,
+                            decoration:
+                            new BoxDecoration(
+                              borderRadius: BorderRadius.circular(4.0),
+                              color: Color(0xFFFFFFFF).withOpacity(0.63),
+                            ),
+                            child: Text(
+                              "Acheter",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],),
+                  ],
+                ),
+              ],
+            ),
+
+          ],
+        )
+    );
+  }
 }
 
 Widget getCardEvent()
