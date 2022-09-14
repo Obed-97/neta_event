@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 import 'package:neta_event/Home/navbar.dart';
-//Icon: Icons.bookmark_outline_sharp,
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -310,7 +309,7 @@ class _HomePage_State extends State<HomePage> {
       ),
       body : Stack(
         children: <Widget>[
-          Home(),
+          Home(MediaQuery.of(context).size.width),
           bottomBar(),
         ],
       ),
@@ -318,7 +317,7 @@ class _HomePage_State extends State<HomePage> {
   }
 }
 
-Widget Home()
+Widget Home(var size)
 {
  return SingleChildScrollView(
     padding: EdgeInsets.only(left: 33),
@@ -413,7 +412,7 @@ Widget Home()
               fontWeight: FontWeight.bold,
               color: Color(0xFF120D26),
             ),),
-          SizedBox(width: 160,),
+          SizedBox(width: size *0.4,),
           Text(
             "Voir tout",
             style: TextStyle(
@@ -428,15 +427,16 @@ Widget Home()
       SingleChildScrollView(
         //changing scroll direction into horizontal
         scrollDirection: Axis.horizontal,
+
         child: Column(
           children: <Widget>[
-            getEvents(1),
+            getEvents(1,size),
             SizedBox(height: 20,),
-            getEvents(2),
+            getEvents(2,size),
             SizedBox(height: 20,),
-            getEvents(3),
+            getEvents(3,size),
             SizedBox(height: 20,),
-            getEvents(4),
+            getEvents(4,size),
 
           ],
         ),),
@@ -449,7 +449,7 @@ Widget Home()
               fontWeight: FontWeight.bold,
               color: Color(0xFF120D26),
             ),),
-          SizedBox(width: 160,),
+          SizedBox(width: size *0.52,),
           Text(
             "Voir tout",
             style: TextStyle(
@@ -479,14 +479,18 @@ Widget Home()
   );
 }
 
-Widget getEvents(int  i)
+Widget getEvents(int  i, var size)
 {
-  return Container(
-      height: 112,
-      width: 327,
+  return
+  Container(
+    padding: EdgeInsets.only(
+    right: 90,
+  ),
+    child:Container(
+      height: 125,
+      width: size * 0.85,
       padding: EdgeInsets.only(
-        left: 10.0,
-        //right: 9.0,
+        left: 30.0,
         top: 9,
         bottom: 10,
       ),
@@ -497,23 +501,21 @@ Widget getEvents(int  i)
       ),
       child: Row(
         children: [
-            ClipRRect(
+          ClipRRect(
             borderRadius: BorderRadius.circular(10.0),
             child:
-             Image.asset(
-            "assets/events/$i.png",
-            width: 79,
-            height: 93,
+            Image.asset(
+              "assets/events/$i.png",
+              width: 79,
+              height: 93,
+            ),
           ),
-          ),
-         // SizedBox(width: 20,),
-
           Container(
             padding: EdgeInsets.only(
-              left: 25.0,
-              right: 10.0,
-              top: 20,
-              bottom: 10,
+              left: 5.0,
+              right: 5.0,
+              top: 10,
+              bottom:5,
             ),
             child: Column(
               children: [
@@ -525,27 +527,30 @@ Widget getEvents(int  i)
                     color: Color(0xFF5669FF),
                   ),),
                 SizedBox(height: 3,),
-                Text(
-                  "One man show ramatonlaye ",
-                  style:  TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                SizedBox(width: size *0.4,
+                  child: Expanded(
+                    child: Text(
+                      "Payer vos tickets en toute sécurité",
+                      style:  TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold, color: Colors.black),
+                      softWrap: true,
+                      maxLines: 3,
+                    ),
                   ),
-                  softWrap: true,
-                  maxLines: 3,
                 ),
                 Row(
                   children: [
                     Icon(Icons.location_on_rounded,size: 20,color:  Color(0xFF747688),),
                     SizedBox(width: 10,),
-                    Text(
-                      "Radius Gallery • Santa Cruz",
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF747688),
-                      ),),
+                    SizedBox(width: size *0.4,
+                      child: Expanded(
+                        child: Text(
+                          "Radius Gallery • Santa Cruz",
+                          style:  TextStyle(fontSize: 13.0, fontWeight: FontWeight.bold, color: Color(0xFF747688),),
+                          softWrap: true,
+                          maxLines: 3,
+                        ),
+                      ),
+                    ),
                   ],
                 )
               ],
@@ -553,7 +558,9 @@ Widget getEvents(int  i)
           ),
         ],
       ),
+    ) ,
   );
+
 }
 
 Widget getCategories(int  i)
