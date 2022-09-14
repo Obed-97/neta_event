@@ -108,7 +108,7 @@ class _HomePage_State extends State<HomePage> {
               Padding(
                 padding:  EdgeInsets.only(left: 30),
                 child: const ListTile(
-                  leading: Icon(Icons.star_border_outlined, color: Colors.black,),
+                  leading: Icon(Icons.bookmark_outline, color: Colors.black,),
                   title: Text('Favoris', style: TextStyle(fontSize: 18,  ),),
                 ),
               ),
