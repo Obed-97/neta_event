@@ -350,17 +350,17 @@ Widget Home()
         scrollDirection: Axis.horizontal,
         child: Row(
           children: <Widget>[
-            getCardEvent(),
+            getCardEvent(1),
             SizedBox(width: 10,),
-            getCardEvent(),
+            getCardEvent(2),
             SizedBox(width: 10,),
-            getCardEvent(),
+            getCardEvent(3),
             SizedBox(width: 10,),
-            getCardEvent(),
+            getCardEvent(4),
             SizedBox(width: 10,),
-            getCardEvent(),
+            getCardEvent(5),
             SizedBox(width: 10,),
-            getCardEvent(),
+            getCardEvent(6),
           ],
         ),),
       SizedBox(height: 30,),
@@ -390,17 +390,17 @@ Widget Home()
         scrollDirection: Axis.horizontal,
         child: Row(
           children: <Widget>[
-            getCategories(),
+            getCategories(1),
             SizedBox(width: 10,),
-            getCategories(),
+            getCategories(2),
             SizedBox(width: 10,),
-            getCategories(),
+            getCategories(3),
             SizedBox(width: 10,),
-            getCategories(),
+            getCategories(4),
             SizedBox(width: 10,),
-            getCategories(),
+            getCategories(5),
             SizedBox(width: 10,),
-            getCategories(),
+            getCategories(6),
           ],
         ),),
       SizedBox(height: 30,),
@@ -430,13 +430,13 @@ Widget Home()
         scrollDirection: Axis.horizontal,
         child: Column(
           children: <Widget>[
-            getEvents(),
+            getEvents(1),
             SizedBox(height: 20,),
-            getEvents(),
+            getEvents(2),
             SizedBox(height: 20,),
-            getEvents(),
+            getEvents(3),
             SizedBox(height: 20,),
-            getEvents(),
+            getEvents(4),
 
           ],
         ),),
@@ -479,7 +479,7 @@ Widget Home()
   );
 }
 
-Widget getEvents()
+Widget getEvents(int  i)
 {
   return Container(
       height: 112,
@@ -497,10 +497,14 @@ Widget getEvents()
       ),
       child: Row(
         children: [
-          Image.asset(
-            "assets/SlashScreen/testimage.png",
+            ClipRRect(
+            borderRadius: BorderRadius.circular(10.0),
+            child:
+             Image.asset(
+            "assets/events/$i.png",
             width: 79,
             height: 93,
+          ),
           ),
          // SizedBox(width: 20,),
 
@@ -552,24 +556,24 @@ Widget getEvents()
   );
 }
 
-Widget getCategories()
+Widget getCategories(int  i)
 {
   return Stack(
-      alignment: Alignment.center,
+      alignment: Alignment.centerLeft,
       children: <Widget>[
         Container(
           child:  ClipRRect(
             borderRadius: BorderRadius.circular(10.0),
             child:
             Image.asset(
-              "assets/SlashScreen/testimage.png",
+              "assets/categories/$i.jpg",
                width: 218,
                height: 131,
             ),
           ),
         ),
         Container(
-          width: 80,
+          width: 120,
           padding: EdgeInsets.only(
             left: 23.0,
             top: 10.0,
@@ -577,7 +581,7 @@ Widget getCategories()
           child:Text(
             "Musique & chants",
             style: TextStyle(
-              fontSize: 14,
+              fontSize: 17,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
@@ -744,7 +748,7 @@ Widget getPacks(int i)
   }
 }
 
-Widget getCardEvent()
+Widget getCardEvent(int i)
 {
   return Container(
       height: 255,
@@ -769,7 +773,7 @@ Widget getCardEvent()
                   borderRadius: BorderRadius.circular(10.0),
                   child:
                   Image.asset(
-                    "assets/SlashScreen/testimage.png",
+                    "assets/events/$i.png",
                     width: 218,
                     height: 131,
                   ),
