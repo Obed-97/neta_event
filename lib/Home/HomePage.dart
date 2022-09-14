@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:neta_event/Home/navbar.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+   HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePage_State createState() => _HomePage_State();
@@ -310,7 +310,7 @@ class _HomePage_State extends State<HomePage> {
       body : Stack(
         children: <Widget>[
           Home(MediaQuery.of(context).size.width),
-          bottomBar(),
+          bottomBar(context),
         ],
       ),
     );
@@ -1083,7 +1083,7 @@ class TabIconData {
   ];
 }
 
-Widget bottomBar() {
+Widget bottomBar(BuildContext c) {
   return Column(
     children: <Widget>[
       const Expanded(
@@ -1092,7 +1092,6 @@ Widget bottomBar() {
       BottomBarView(
         tabIconsList: TabIconData.tabIconsList,
         addClick: () {
-         print("Profil");
         },
         changeIndex: (int index) {
         },
