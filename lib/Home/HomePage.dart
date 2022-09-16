@@ -820,7 +820,7 @@ Widget getTontine()
                     style: TextStyle(
                       fontSize: 13,
                       //fontWeight: FontWeight.bold,
-                      color: Color(0xFF120D26),
+                      color: Color(0xFFE28541),
                     ),),
                 ),
                 Container(
@@ -833,7 +833,7 @@ Widget getTontine()
                     style: TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF120D26),
+                      color: Colors.black,
                     ),),
                 ),
                 Container(
