@@ -430,13 +430,13 @@ Widget Home(var size)
 
         child: Column(
           children: <Widget>[
-            getEvents(1,size),
+           /* getEvents(1,size),
             SizedBox(height: 20,),
             getEvents(2,size),
             SizedBox(height: 20,),
             getEvents(3,size),
             SizedBox(height: 20,),
-            getEvents(4,size),
+            getEvents(4,size),*/
 
           ],
         ),),
@@ -471,6 +471,40 @@ Widget Home(var size)
             getPacks(2),
             SizedBox(width: 10,),
             getPacks(3),
+            SizedBox(width: 10,),
+          ],
+        ),),
+      Row(
+        children: [
+          Text(
+            "Tontine",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF120D26),
+            ),),
+          SizedBox(width: size *0.52,),
+          Text(
+            "Voir tout",
+              style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF747688),
+            ),),
+          Icon(Icons.arrow_right , size: 25,color: Color(0xFF747688),),
+        ],
+      ),
+      SizedBox(height: 15,),
+      SingleChildScrollView(
+        //changing scroll direction into horizontal
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: <Widget>[
+            getTontine(),
+            SizedBox(width: 10,),
+            getTontine(),
+            SizedBox(width: 10,),
+            getTontine(),
             SizedBox(width: 10,),
           ],
         ),),
@@ -597,7 +631,6 @@ Widget getCategories(int  i)
 }
 
 
-
 Widget getPacks(int i)
 {
   String pack="";
@@ -620,7 +653,7 @@ Widget getPacks(int i)
 
   {
     return Container(
-        height: 265+58,
+        height: 270,
         width: 244,
         decoration:
         new BoxDecoration(
@@ -697,53 +730,53 @@ Widget getPacks(int i)
                     SizedBox(height: 15,),
                     Row(
                       children: [
-                      Container(
-                        padding: EdgeInsets.only(
-                          left: 45,
-                          top: 1,
-                          //right: 50.0,
+                        Container(
+                          padding: EdgeInsets.only(
+                            left: 45,
+                            top: 1,
+                            //right: 50.0,
+                          ),
+                          child: Icon(Icons.check_circle_sharp, color : Colors.black),
                         ),
-                        child: Icon(Icons.check_circle_sharp, color : Colors.black),
-                      ),
-                      SizedBox(width: 15,),
-                      Text("7 jours de publicité" , style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),),
-                    ],),
+                        SizedBox(width: 15,),
+                        Text("7 jours de publicité" , style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),),
+                      ],),
                     SizedBox(height: 20,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                      Container(
-                        child: InkWell(
-                          onTap: () {
-                          },
-                          child: Container(
-                            padding: EdgeInsets.only(
-                              left: 21,
-                              right: 21,
-                              top : 5,
-                              bottom: 5,
-                            ),
-                            height: 28,
-                            decoration:
-                            new BoxDecoration(
-                              borderRadius: BorderRadius.circular(4.0),
-                              color: Color(0xFFFFFFFF).withOpacity(0.63),
-                            ),
-                            child: Text(
-                              "Acheter",
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.black,
+                        Container(
+                          child: InkWell(
+                            onTap: () {
+                            },
+                            child: Container(
+                              padding: EdgeInsets.only(
+                                left: 21,
+                                right: 21,
+                                top : 5,
+                                bottom: 5,
+                              ),
+                              height: 28,
+                              decoration:
+                              new BoxDecoration(
+                                borderRadius: BorderRadius.circular(4.0),
+                                color: Color(0xFFFFFFFF).withOpacity(0.63),
+                              ),
+                              child: Text(
+                                "Acheter",
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ],),
+                      ],),
                   ],
                 ),
               ],
@@ -754,6 +787,124 @@ Widget getPacks(int i)
     );
   }
 }
+
+
+Widget getTontine()
+ {
+    return Container(
+        decoration:
+        new BoxDecoration(
+          borderRadius: BorderRadius.circular(13.0),
+          color: Colors.transparent,
+        ),
+        child: Column (
+          children: [
+            Stack(
+              children: <Widget>[
+                Container(
+                  child:  ClipRRect(
+                    borderRadius: BorderRadius.circular(10.0),
+                    child:
+                    Image.asset(
+                      "assets/tontine/s1.png",
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: 35,
+                    top:100,
+                  ),
+                  child: Text(
+                    "Mariage",
+                    style: TextStyle(
+                      fontSize: 13,
+                      //fontWeight: FontWeight.bold,
+                      color: Color(0xFF120D26),
+                    ),),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: 34,
+                    top:120,
+                  ),
+                  child: Text(
+                    "Lorem espium anturium ka",
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF120D26),
+                    ),),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: 34,
+                    top:150,
+                  ),
+                  child: Text(
+                    "500 Fcfa Chaque trimestre",
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Color(0xFF120D26),
+                    ),),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    left: 34,
+                    top:170,
+                  ),
+                  child: Text(
+                    "12 participants",
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF120D26),
+                    ),),
+                ),
+
+                Container(
+                  padding: EdgeInsets.only(
+                    left: 120,
+                    top:190,
+                  ),
+                  child: InkWell(
+                    onTap: () {
+                    },
+                    child: Container(
+                      padding: EdgeInsets.only(
+                        left: 6.0,
+                        right: 6.0,
+                        top: 10,
+                        bottom: 10,
+                      ),
+                      decoration:
+                      new BoxDecoration(
+                        borderRadius: BorderRadius.circular(8.0),
+                        gradient: new LinearGradient(
+                          colors: [Colors.purple, Colors.pink],
+                          begin: FractionalOffset.centerLeft,
+                          end: FractionalOffset.centerRight,
+                        ),
+                      ),
+                      child: Text(
+                        "Participer ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+          ],
+        )
+    );
+  }
+
 
 Widget getCardEvent(int i)
 {
