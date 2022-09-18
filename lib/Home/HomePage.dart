@@ -430,13 +430,13 @@ Widget Home(var size)
 
         child: Column(
           children: <Widget>[
-           /* getEvents(1,size),
+            getEvents(1,size),
             SizedBox(height: 20,),
             getEvents(2,size),
             SizedBox(height: 20,),
             getEvents(3,size),
             SizedBox(height: 20,),
-            getEvents(4,size),*/
+            getEvents(4,size),
 
           ],
         ),),
@@ -561,22 +561,23 @@ Widget getEvents(int  i, var size)
                     color: Color(0xFF5669FF),
                   ),),
                 SizedBox(height: 3,),
-                SizedBox(width: size *0.4,
-                  child: Expanded(
+                Expanded(
+                  child: Container(
+                    width: size *0.4,
                     child: Text(
                       "Payer vos tickets en toute sécurité",
                       style:  TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold, color: Colors.black),
                       softWrap: true,
                       maxLines: 3,
                     ),
-                  ),
-                ),
+                  )
+                  ,),
                 Row(
                   children: [
                     Icon(Icons.location_on_rounded,size: 20,color:  Color(0xFF747688),),
                     SizedBox(width: 10,),
-                    SizedBox(width: size *0.4,
-                      child: Expanded(
+                   Container(
+                     width: size *0.4,
                         child: Text(
                           "Radius Gallery • Santa Cruz",
                           style:  TextStyle(fontSize: 13.0, fontWeight: FontWeight.bold, color: Color(0xFF747688),),
@@ -584,7 +585,6 @@ Widget getEvents(int  i, var size)
                           maxLines: 3,
                         ),
                       ),
-                    ),
                   ],
                 )
               ],
