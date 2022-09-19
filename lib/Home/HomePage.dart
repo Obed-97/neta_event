@@ -691,7 +691,6 @@ Widget getPacks(int i)
                         ),),
                       ),
                     ],),
-
                     SizedBox(height: 20,),
 
                     Row(children: [
@@ -1104,7 +1103,7 @@ class TabIconData {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-        Icon(Icons.cable_rounded, color : Color(0xFFDADADA)),
+        Icon(Icons.search, color : Color(0xFFDADADA)),
         Text(
           "Decouvrir",
           style: TextStyle(
@@ -1119,7 +1118,7 @@ class TabIconData {
   mainAxisAlignment: MainAxisAlignment.center,
   children: [
     GradientIconNav(
-        Icons.star,
+      Icons.search,
       ),
     GradientText("Decouvrir",
       style: TextStyle(
@@ -1170,7 +1169,7 @@ class TabIconData {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.cable_rounded,  color : Color(0xFFDADADA)),
+          Icon(Icons.location_on,  color : Color(0xFFDADADA)),
           Text(
             "Decouvrir",
             style: TextStyle(
@@ -1185,7 +1184,7 @@ class TabIconData {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GradientIconNav(
-              Icons.star,
+              Icons.location_on,
             ),
             GradientText("Decouvrir",
               style: TextStyle(
@@ -1203,7 +1202,7 @@ class TabIconData {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.cable_rounded,  color : Color(0xFFDADADA)),
+          Icon(Icons.login_outlined,  color : Color(0xFFDADADA)),
           Text(
             "Tickets",
             style: TextStyle(
