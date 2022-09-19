@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 import 'package:neta_event/Home/navbar.dart';
+import 'package:neta_event/Profil/Profil.dart';
 
 class HomePage extends StatefulWidget {
    HomePage({Key? key}) : super(key: key);
@@ -1151,7 +1152,7 @@ class TabIconData {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GradientIconNav(
-              Icons.star,
+              Icons.calendar_month,
             ),
             GradientText("Event",
               style: TextStyle(
@@ -1171,7 +1172,7 @@ class TabIconData {
         children: [
           Icon(Icons.location_on,  color : Color(0xFFDADADA)),
           Text(
-            "Decouvrir",
+            "Tickets",
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.bold,
@@ -1186,7 +1187,7 @@ class TabIconData {
             GradientIconNav(
               Icons.location_on,
             ),
-            GradientText("Decouvrir",
+            GradientText("Tickets",
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
@@ -1204,7 +1205,7 @@ class TabIconData {
         children: [
           Icon(Icons.login_outlined,  color : Color(0xFFDADADA)),
           Text(
-            "Tickets",
+            "Deconnecter",
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.bold,
@@ -1217,7 +1218,7 @@ class TabIconData {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GradientIconNav(
-              Icons.star,
+              Icons.login_outlined,
             ),
             GradientText("Deconnecter",
               style: TextStyle(
