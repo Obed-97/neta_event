@@ -1243,6 +1243,8 @@ Widget bottomBar(BuildContext c) {
       BottomBarView(
         tabIconsList: TabIconData.tabIconsList,
         addClick: () {
+          Navigator.pushReplacement(
+              c, MaterialPageRoute(builder: (context) => Profil() ));
         },
         changeIndex: (int index) {
         },
