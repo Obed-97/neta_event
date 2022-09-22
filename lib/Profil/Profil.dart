@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:neta_event/Profil/barProfil.dart';
+import 'package:neta_event/Profil/tabProfil.dart';
 
 import '../Home/HomePage.dart';
 
@@ -11,7 +13,32 @@ class Profil extends StatefulWidget {
   State<Profil> createState() => _ProfilState();
 }
 
-class _ProfilState extends State<Profil> {
+class _ProfilState extends State<Profil> with TickerProviderStateMixin {
+  List<TabProfil> tabIconsList = TabProfil.tabIconsList;
+  AnimationController? animationController;
+  Widget tabBody = Container(
+    color: Color(0xFFF2F3F8),
+  );
+
+  bool editMode= false ;
+  @override
+  void initState() {
+    tabIconsList.forEach((TabProfil tab) {
+      tab.isSelected = false;
+    });
+    tabIconsList[0].isSelected = true;
+
+    animationController = AnimationController(
+        duration: const Duration(milliseconds: 600), vsync: this);
+    tabBody = Text('Fisrt ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    animationController?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,83 +130,110 @@ class _ProfilState extends State<Profil> {
               ],),
             ],
           ),
-        SizedBox(height: 25,),
 
-      Center(
-      child: InkWell(
-        onTap: () {
-          print(" go to edit ");
-        },
-        child: Container(
-          width: 150,
-          height: 60,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
-              gradient:
-              new LinearGradient(
-                colors: [Colors.purple, Colors.pink],
-                begin: FractionalOffset.centerLeft,
-                end: FractionalOffset.centerRight,
-              ),
-          ),
-          child: Container(
-            width: 145,
-            height: 58,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-              color: Colors.white,
-            ),
-            alignment: Alignment.center,
-            child: Row(
-              children: [
-                SizedBox(width: 5,),
-                GradientIcon(Icons.mode_edit_outline_outlined ,25),
-                SizedBox(width: 10,),
-                GradientText("Editer Profile",
-                  style : TextStyle(
-                    fontSize: 15,
-                    color: Colors.white,
-                  ),
+
+        DunamicNavgationForEdit(),
+
+      ],),
+    );
+  }
+
+  Widget DunamicNavgationForEdit()
+  {
+    if (editMode == false)
+      {
+        return BeforeEdit();
+      }
+    else
+      {
+        return getbarEdit();
+      }
+  }
+
+
+Widget BeforeEdit()
+{
+    return Column(
+      children: [
+        SizedBox(height: 25,),
+        Center(
+          child: InkWell(
+            onTap: () {
+              print(" go to edit ");
+              setState(() {
+                editMode = true;
+              });
+            },
+            child: Container(
+              width: 150,
+              height: 60,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
+                gradient:
+                new LinearGradient(
+                  colors: [Colors.purple, Colors.pink],
+                  begin: FractionalOffset.centerLeft,
+                  end: FractionalOffset.centerRight,
                 ),
-              ],
+              ),
+              child: Container(
+                width: 145,
+                height: 58,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  color: Colors.white,
+                ),
+                alignment: Alignment.center,
+                child: Row(
+                  children: [
+                    SizedBox(width: 5,),
+                    GradientIcon(Icons.mode_edit_outline_outlined ,25),
+                    SizedBox(width: 10,),
+                    GradientText("Editer Profile",
+                      style : TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ),
-      ),
-    ),
 
         SizedBox(height: 25,),
 
-           SizedBox(
-             width: MediaQuery.of(context).size.width *0.9,
-             child: Container(
-               width: MediaQuery.of(context).size.width *0.9,
-               child: Text(
-                 "Ayoh... Garde tes données en sécurité, vous pouvez les changer à tout moment",
-                 style:  TextStyle(fontSize: 16.0, fontWeight: FontWeight.normal, color: Colors.black),
-                 softWrap: true,
-                 maxLines: 3,
-               ),
-             ),
-           ),
-        SizedBox(height: 25,),
-           Container(
-            width: MediaQuery.of(context).size.width *0.75,
-            child:
-             Row(
-               children: [
-                 Icon(Icons.person_outline , color: Colors.grey,),
-                 SizedBox(width: 10,),
-                 Text(
-                   "Saido neta-event",
-                   style:  TextStyle(fontSize: 13.0, fontWeight: FontWeight.normal, color: Colors.black),
-                   softWrap: true,
-                   maxLines: 3,
-                 ),
-               ],
-             ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width *0.9,
+          child: Container(
+            width: MediaQuery.of(context).size.width *0.9,
+            child: Text(
+              "Ayoh... Garde tes données en sécurité, vous pouvez les changer à tout moment",
+              style:  TextStyle(fontSize: 16.0, fontWeight: FontWeight.normal, color: Colors.black),
+              softWrap: true,
+              maxLines: 3,
+            ),
           ),
+        ),
+        SizedBox(height: 25,),
+        Container(
+          width: MediaQuery.of(context).size.width *0.75,
+          child:
+          Row(
+            children: [
+              Icon(Icons.person_outline , color: Colors.grey,),
+              SizedBox(width: 10,),
+              Text(
+                "Saido neta-event",
+                style:  TextStyle(fontSize: 13.0, fontWeight: FontWeight.normal, color: Colors.black),
+                softWrap: true,
+                maxLines: 3,
+              ),
+            ],
+          ),
+        ),
         SizedBox(height: 10,),
         Container(
           width: MediaQuery.of(context).size.width *0.75,
@@ -231,11 +285,74 @@ class _ProfilState extends State<Profil> {
             ],
           ),
         ),
-      ],),
+      ],
     );
-  }
+}
 
-
+Widget getbarEdit()
+{
+   return Column(
+     children: [
+     BarProfil(
+     tabIconsList: tabIconsList,
+     addClick: () {
+       print("wxcwxvxw");
+     },
+     changeIndex: (int index) {
+       if (index == 0) {
+         animationController?.reverse().then<dynamic>((data) {
+           if (!mounted) {
+             return;
+           }
+           setState(() {
+             tabBody = Text('Second ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),);
+           });
+         });
+       } else if (index == 1) {
+         animationController?.reverse().then<dynamic>((data) {
+           if (!mounted) {
+             return;
+           }
+           setState(() {
+             tabBody = Text('Theard ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),);
+           });
+         });
+       } else if (index == 2) {
+         animationController?.reverse().then<dynamic>((data) {
+           if (!mounted) {
+             return;
+           }
+           setState(() {
+             tabBody = Column(
+               children: [
+                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
+                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
+                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
+                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
+                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
+                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
+                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
+                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
+               ],
+             );
+           });
+         });
+       } else if (index == 3) {
+         animationController?.reverse().then<dynamic>((data) {
+           if (!mounted) {
+             return;
+           }
+           setState(() {
+             //   tabBody = Setting(animationController: animationController);
+           });
+         });
+       }
+     },
+   ),
+       tabBody,
+     ],
+   );
+}
 }
 
 
