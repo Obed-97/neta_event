@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:neta_event/Profil/DonneeProfile.dart';
+import 'package:neta_event/Profil/PhotoProfile.dart';
 import 'package:neta_event/Profil/barProfil.dart';
 import 'package:neta_event/Profil/tabProfil.dart';
 
@@ -310,7 +311,13 @@ Widget getbarEdit()
              return;
            }
            setState(() {
-             tabBody = Text('Second ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),);
+             tabBody = DonneeProfile(SaveEdit: ()
+             {
+               setState(() {
+                 editMode = false;
+               });
+             }
+               ,);
            });
          });
        } else if (index == 1) {
@@ -319,7 +326,12 @@ Widget getbarEdit()
              return;
            }
            setState(() {
-             tabBody = Text('Theard ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),);
+             tabBody = PhotoProfile(SaveEdit: ()
+             {
+               setState(() {
+                 editMode = false;
+               });
+             },);
            });
          });
        } else if (index == 2) {
