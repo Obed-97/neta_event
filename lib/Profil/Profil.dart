@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:neta_event/Profil/DonneeProfile.dart';
 import 'package:neta_event/Profil/PhotoProfile.dart';
+import 'package:neta_event/Profil/PswProfile.dart';
 import 'package:neta_event/Profil/barProfil.dart';
 import 'package:neta_event/Profil/tabProfil.dart';
 
@@ -340,18 +341,13 @@ Widget getbarEdit()
              return;
            }
            setState(() {
-             tabBody = Column(
-               children: [
-                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
-                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
-                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
-                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
-                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
-                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
-                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
-                 Text('Forth ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),),
-               ],
-             );
+             tabBody = PswProfile(SaveEdit: ()
+               {
+                 setState(() {
+                   editMode = false;
+                 });
+               }
+               , );
            });
          });
        } else if (index == 3) {
