@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neta_event/Profil/DonneeProfile.dart';
 import 'package:neta_event/Profil/barProfil.dart';
 import 'package:neta_event/Profil/tabProfil.dart';
 
@@ -30,7 +31,11 @@ class _ProfilState extends State<Profil> with TickerProviderStateMixin {
 
     animationController = AnimationController(
         duration: const Duration(milliseconds: 600), vsync: this);
-    tabBody = Text('Fisrt ....',style:  TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),);
+    tabBody = DonneeProfile(SaveEdit: () {
+      setState(() {
+        editMode = false;
+      });
+      }, );
     super.initState();
   }
 
@@ -53,7 +58,8 @@ class _ProfilState extends State<Profil> with TickerProviderStateMixin {
           ),
         ),
       ),
-      body: Column(children: [
+      body: SingleChildScrollView(
+    child :Column(children: [
 
         SizedBox(height: 50,),
         Center(
@@ -134,7 +140,7 @@ class _ProfilState extends State<Profil> with TickerProviderStateMixin {
 
         DunamicNavgationForEdit(),
 
-      ],),
+      ],),),
     );
   }
 
@@ -159,7 +165,6 @@ Widget BeforeEdit()
         Center(
           child: InkWell(
             onTap: () {
-              print(" go to edit ");
               setState(() {
                 editMode = true;
               });

@@ -22,14 +22,14 @@ class TabProfil {
     TabProfil(
       imagePath: Text("DONNEES",
         style: TextStyle(
-          fontSize: 25,
+          fontSize: 18,
           fontWeight: FontWeight.bold,
           color: Colors.black,
         ),),
       selectedImagePath: GradientText("DONNEES",
   style: TextStyle(
     decoration: TextDecoration.underline,
-    fontSize: 25,
+    fontSize: 18,
     fontWeight: FontWeight.bold,
     color: Colors.black,
   ),),
@@ -40,14 +40,14 @@ class TabProfil {
     TabProfil(
       imagePath: Text("PHOTO",
         style: TextStyle(
-          fontSize: 25,
+          fontSize: 18,
           fontWeight: FontWeight.bold,
           color: Colors.black,
         ),),
       selectedImagePath: GradientText("PHOTO",
         style: TextStyle(
           decoration: TextDecoration.underline,
-          fontSize: 25,
+          fontSize: 18,
           fontWeight: FontWeight.bold,
           color: Colors.black,
         ),),
@@ -58,14 +58,14 @@ class TabProfil {
     TabProfil(
       imagePath: Text("MOT DE PASSE",
         style: TextStyle(
-          fontSize: 25,
+          fontSize: 18,
           fontWeight: FontWeight.bold,
           color: Colors.black,
         ),),
       selectedImagePath: GradientText("MOT DE PASSE",
         style: TextStyle(
           decoration: TextDecoration.underline,
-          fontSize: 25,
+          fontSize: 18,
           fontWeight: FontWeight.bold,
           color: Colors.black,
         ),),

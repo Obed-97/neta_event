@@ -62,53 +62,6 @@ class _BarProfilState extends State<BarProfil>
         ),
       ],
     );
-  /*  return Stack(
-     // alignment: AlignmentDirectional.center, // alignment
-      children: <Widget>[
-                 Column(
-                  children: <Widget>[
-                    SizedBox(
-                     // height: 62,
-                      child: Padding(
-                        padding:
-                        const EdgeInsets.only(left: 8, right: 8, top: 4),
-                        child: Row(
-                          children: <Widget>[
-                            Expanded(
-                              child: TabIcons(
-                                  TabProfilData: widget.tabIconsList?[0],
-                                  removeAllSelect: () {
-                                    setRemoveAllSelection(
-                                        widget.tabIconsList?[0]);
-                                    widget.changeIndex!(0);
-                                  }),
-                            ),
-                            Expanded(
-                              child: TabIcons(
-                                  TabProfilData: widget.tabIconsList?[1],
-                                  removeAllSelect: () {
-                                    setRemoveAllSelection(
-                                        widget.tabIconsList?[1]);
-                                    widget.changeIndex!(1);
-                                  }),
-                            ),
-                            Expanded(
-                              child: TabIcons(
-                                  TabProfilData: widget.tabIconsList?[2],
-                                  removeAllSelect: () {
-                                    setRemoveAllSelection(
-                                        widget.tabIconsList?[2]);
-                                    widget.changeIndex!(2);
-                                  }),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-      ],
-    );*/
   }
 
   void setRemoveAllSelection(TabProfil? tabb) {
